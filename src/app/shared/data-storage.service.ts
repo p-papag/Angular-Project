@@ -31,14 +31,14 @@ export class DataStorageService {
       .map(
         (recipes) => {
           console.log(recipes);
-          //Old Http method:
-          //  for (let recipe of recipes) {
-          //   if (!recipe['ingredients']) {
-          //     recipe['ingredients'] = [];
-          //   }
-          // }
-          // return recipes;
-          return [];
+            
+          for (let recipe of recipes) {
+            if (!recipe['ingredients']) {
+              recipe['ingredients'] = [];
+            }
+          }
+          return recipes;
+         
         }
       )
       .subscribe(
