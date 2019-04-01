@@ -17,7 +17,7 @@ export class DataStorageService {
     const token = this.authService.getToken();
 
     return this.httpClient.put('https://my-project-1542110590488.firebaseio.com/recipes.json' 
-    + token, this.recipeService.getRecipes(), {
+    , this.recipeService.getRecipes(), {
       observe: 'body',
       params: new HttpParams().set('auth', token)
   
